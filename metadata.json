@@ -1,0 +1,14 @@
+{
+  "name": "Edge Kanban",
+  "description": "Edge-anchored auto-hiding Kanban board for GNOME Shell",
+  "uuid": "edge-kanban@yulian.local",
+  "settings-schema": "org.gnome.shell.extensions.edge-kanban",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ]
+}

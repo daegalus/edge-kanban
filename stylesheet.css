@@ -1,0 +1,561 @@
+.edge-kanban-root {
+    color: #f7f7f5;
+}
+
+.edge-kanban-surface {
+    background-color: rgba(247, 243, 234, 0.94);
+    border: 0;
+    padding: 20px 18px;
+    spacing: 16px;
+}
+
+.edge-kanban-left .edge-kanban-surface {
+    border-radius: 0 14px 14px 0;
+}
+
+.edge-kanban-right .edge-kanban-surface {
+    border-radius: 14px 0 0 14px;
+}
+
+.edge-kanban-top .edge-kanban-surface {
+    border-radius: 0 0 14px 14px;
+}
+
+.edge-kanban-bottom .edge-kanban-surface {
+    border-radius: 14px 14px 0 0;
+}
+
+.edge-kanban-handle {
+    background-color: rgba(85, 167, 216, 0.72);
+}
+
+.edge-kanban-left .edge-kanban-handle {
+    border-radius: 0 5px 5px 0;
+}
+
+.edge-kanban-right .edge-kanban-handle {
+    border-radius: 5px 0 0 5px;
+}
+
+.edge-kanban-top .edge-kanban-handle {
+    border-radius: 0 0 5px 5px;
+}
+
+.edge-kanban-bottom .edge-kanban-handle {
+    border-radius: 5px 5px 0 0;
+}
+
+.edge-kanban-header {
+    spacing: 8px;
+}
+
+.edge-kanban-title {
+    color: #ffffff;
+    font-size: 17pt;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72);
+}
+
+.edge-kanban-total-count,
+.edge-kanban-count {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    color: rgba(247, 247, 245, 0.58);
+    font-size: 10pt;
+    font-weight: 500;
+    min-width: 18px;
+    padding: 0;
+    text-align: center;
+}
+
+.edge-kanban-standup-status {
+    color: rgba(247, 247, 245, 0.54);
+    font-size: 9.2pt;
+    font-weight: 500;
+}
+
+.edge-kanban-standup-button {
+    color: rgba(255, 255, 255, 0.76);
+    min-height: 24px;
+    min-width: 24px;
+}
+
+.edge-kanban-routine {
+    spacing: 7px;
+}
+
+.edge-kanban-routine-header {
+    padding: 0 2px;
+    spacing: 7px;
+}
+
+.edge-kanban-routine-heading {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 11pt;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72);
+}
+
+.edge-kanban-routine-count {
+    color: rgba(247, 247, 245, 0.54);
+    font-size: 10pt;
+    font-weight: 500;
+    min-width: 28px;
+    text-align: center;
+}
+
+.edge-kanban-routine-list {
+    spacing: 6px;
+}
+
+.edge-kanban-routine-item {
+    background-color: rgba(36, 36, 34, 0.58);
+    border: 0;
+    border-radius: 10px;
+    min-height: 34px;
+    padding: 5px 7px;
+    spacing: 6px;
+}
+
+.edge-kanban-routine-title-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    padding: 2px 0;
+}
+
+.edge-kanban-routine-title-button:hover {
+    background-color: transparent;
+}
+
+.edge-kanban-routine-title {
+    color: #ffffff;
+    font-size: 10.2pt;
+}
+
+.edge-kanban-routine-item-checked .edge-kanban-routine-title {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+.edge-kanban-routine-check {
+    color: rgba(255, 255, 255, 0.78);
+    min-height: 24px;
+    min-width: 24px;
+}
+
+.edge-kanban-routine-delete {
+    color: rgba(255, 255, 255, 0.52);
+    min-height: 24px;
+    min-width: 24px;
+}
+
+.edge-kanban-routine-add-row {
+    background-color: rgba(36, 36, 34, 0.48);
+    border-radius: 10px;
+    padding: 6px;
+    spacing: 6px;
+}
+
+.edge-kanban-routine-add-entry {
+    background-color: transparent;
+    border: 0;
+    border-radius: 8px;
+    color: #ffffff;
+    min-height: 28px;
+    padding: 3px 7px;
+}
+
+.edge-kanban-board {
+    spacing: 18px;
+}
+
+.edge-kanban-column {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    spacing: 9px;
+}
+
+.edge-kanban-board-side .edge-kanban-column {
+    min-height: 120px;
+}
+
+.edge-kanban-board-bar .edge-kanban-column {
+    min-width: 230px;
+}
+
+.edge-kanban-column-header {
+    padding: 0 2px;
+    spacing: 7px;
+}
+
+.edge-kanban-column-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11pt;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72);
+}
+
+.edge-kanban-scroll {
+    min-height: 72px;
+}
+
+.edge-kanban-card-list {
+    spacing: 7px;
+}
+
+.edge-kanban-task-item {
+    spacing: 0;
+}
+
+.edge-kanban-card {
+    background-color: rgba(36, 36, 34, 0.58);
+    border: 0;
+    border-radius: 10px;
+    min-height: 38px;
+    padding: 7px 8px 7px 11px;
+    spacing: 7px;
+}
+
+.edge-kanban-card-selected {
+    background-color: rgba(48, 48, 45, 0.74);
+}
+
+.edge-kanban-card-dragging {
+    background-color: rgba(64, 64, 60, 0.82);
+}
+
+.edge-kanban-task-item-expanded .edge-kanban-card {
+    border-radius: 10px 10px 8px 8px;
+}
+
+.edge-kanban-notes-drawer {
+    background-color: rgba(26, 26, 24, 0.52);
+    border-radius: 0 0 10px 10px;
+    margin-left: 28px;
+    margin-right: 7px;
+    margin-top: -1px;
+    padding: 8px 9px 9px;
+    spacing: 7px;
+}
+
+.edge-kanban-notes-text {
+    color: rgba(255, 255, 255, 0.78);
+    font-family: monospace;
+    font-size: 9.2pt;
+}
+
+.edge-kanban-notes-entry {
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 9.2pt;
+    min-height: 76px;
+    padding: 5px 6px;
+}
+
+.edge-kanban-notes-actions {
+    spacing: 4px;
+}
+
+.edge-kanban-notes-add {
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    padding: 4px 6px;
+}
+
+.edge-kanban-notes-add:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+.edge-kanban-notes-add-label {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 9.4pt;
+}
+
+.edge-kanban-drop-indicator {
+    border-radius: 99px;
+    min-height: 3px;
+}
+
+.edge-kanban-drag-handle {
+    background-color: transparent;
+    border: 0;
+    border-radius: 99px;
+    color: rgba(255, 255, 255, 0.52);
+    min-height: 24px;
+    min-width: 18px;
+    padding: 2px 0;
+}
+
+.edge-kanban-drag-handle:hover,
+.edge-kanban-drag-handle:active {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.edge-kanban-drag-handle-icon {
+    icon-size: 12px;
+}
+
+.edge-kanban-task-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    padding: 2px 0;
+}
+
+.edge-kanban-task-button:hover {
+    background-color: transparent;
+}
+
+.edge-kanban-task-row {
+    spacing: 10px;
+}
+
+.edge-kanban-task-dot {
+    border-radius: 99px;
+    min-height: 7px;
+    min-width: 7px;
+}
+
+.edge-kanban-task-dot-backlog {
+    background-color: #9aa3ad;
+}
+
+.edge-kanban-task-dot-in-progress {
+    background-color: #55a7d8;
+}
+
+.edge-kanban-task-dot-blocked {
+    background-color: #e6a857;
+}
+
+.edge-kanban-task-dot-done {
+    background-color: #69c382;
+}
+
+.edge-kanban-task-title {
+    color: #ffffff;
+    font-size: 10.5pt;
+    text-shadow: none;
+}
+
+.edge-kanban-empty {
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 10pt;
+    padding: 9px 11px;
+}
+
+.edge-kanban-add-row {
+    background-color: rgba(36, 36, 34, 0.48);
+    border-radius: 10px;
+    padding: 6px;
+    spacing: 6px;
+}
+
+.edge-kanban-add-entry {
+    background-color: transparent;
+    border: 0;
+    border-radius: 8px;
+    color: #ffffff;
+    min-height: 28px;
+    padding: 3px 7px;
+}
+
+.edge-kanban-edit-entry {
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    color: #ffffff;
+    min-height: 24px;
+    padding: 2px 0;
+}
+
+.edge-kanban-icon-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 99px;
+    icon-size: 14px;
+    min-height: 24px;
+    min-width: 24px;
+    padding: 2px;
+}
+
+.edge-kanban-icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.edge-kanban-button-icon {
+    icon-size: 14px;
+}
+
+.edge-kanban-add-toggle {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.78);
+    icon-size: 14px;
+    min-height: 24px;
+    min-width: 24px;
+}
+
+.edge-kanban-add-button {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.edge-kanban-save-button {
+    color: #69c382;
+}
+
+.edge-kanban-edit-button {
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.edge-kanban-cancel-button,
+.edge-kanban-delete-button {
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.edge-kanban-delete-button:hover {
+    background-color: rgba(214, 90, 90, 0.18);
+}
+
+.edge-kanban-bg-transparent .edge-kanban-surface {
+    border-radius: 0;
+}
+
+.edge-kanban-tone-light {
+    color: #2f2d2a;
+}
+
+.edge-kanban-tone-light .edge-kanban-title {
+    color: #262521;
+    text-shadow: none;
+}
+
+.edge-kanban-tone-light .edge-kanban-total-count,
+.edge-kanban-tone-light .edge-kanban-count {
+    color: rgba(47, 45, 42, 0.54);
+}
+
+.edge-kanban-tone-light .edge-kanban-standup-status {
+    color: rgba(47, 45, 42, 0.54);
+}
+
+.edge-kanban-tone-light .edge-kanban-standup-button {
+    color: rgba(47, 45, 42, 0.72);
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-heading {
+    color: rgba(38, 37, 33, 0.82);
+    text-shadow: none;
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-count {
+    color: rgba(47, 45, 42, 0.54);
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-item {
+    background-color: rgba(255, 255, 255, 0.72);
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-title {
+    color: #292824;
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-item-checked .edge-kanban-routine-title {
+    color: rgba(47, 45, 42, 0.42);
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-check,
+.edge-kanban-tone-light .edge-kanban-routine-delete {
+    color: rgba(47, 45, 42, 0.66);
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-add-row {
+    background-color: rgba(255, 255, 255, 0.66);
+}
+
+.edge-kanban-tone-light .edge-kanban-routine-add-entry {
+    color: #292824;
+}
+
+.edge-kanban-tone-light .edge-kanban-column-title {
+    color: rgba(38, 37, 33, 0.82);
+    text-shadow: none;
+}
+
+.edge-kanban-tone-light .edge-kanban-card {
+    background-color: rgba(255, 255, 255, 0.72);
+}
+
+.edge-kanban-tone-light .edge-kanban-card-selected {
+    background-color: rgba(255, 255, 255, 0.92);
+}
+
+.edge-kanban-tone-light .edge-kanban-card-dragging {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
+.edge-kanban-tone-light .edge-kanban-notes-drawer {
+    background-color: rgba(255, 255, 255, 0.52);
+}
+
+.edge-kanban-tone-light .edge-kanban-notes-text {
+    color: rgba(47, 45, 42, 0.78);
+}
+
+.edge-kanban-tone-light .edge-kanban-notes-entry {
+    color: #292824;
+}
+
+.edge-kanban-tone-light .edge-kanban-notes-add:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.edge-kanban-tone-light .edge-kanban-notes-add-label {
+    color: rgba(47, 45, 42, 0.54);
+}
+
+.edge-kanban-tone-light .edge-kanban-drag-handle {
+    color: rgba(47, 45, 42, 0.42);
+}
+
+.edge-kanban-tone-light .edge-kanban-drag-handle:hover,
+.edge-kanban-tone-light .edge-kanban-drag-handle:active {
+    background-color: rgba(0, 0, 0, 0.07);
+    color: rgba(47, 45, 42, 0.72);
+}
+
+.edge-kanban-tone-light .edge-kanban-task-title {
+    color: #292824;
+}
+
+.edge-kanban-tone-light .edge-kanban-empty {
+    color: rgba(47, 45, 42, 0.48);
+}
+
+.edge-kanban-tone-light .edge-kanban-add-row {
+    background-color: rgba(255, 255, 255, 0.66);
+}
+
+.edge-kanban-tone-light .edge-kanban-add-entry,
+.edge-kanban-tone-light .edge-kanban-edit-entry {
+    color: #292824;
+}
+
+.edge-kanban-tone-light .edge-kanban-icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.edge-kanban-tone-light .edge-kanban-add-toggle,
+.edge-kanban-tone-light .edge-kanban-add-button,
+.edge-kanban-tone-light .edge-kanban-edit-button,
+.edge-kanban-tone-light .edge-kanban-cancel-button,
+.edge-kanban-tone-light .edge-kanban-delete-button {
+    color: rgba(47, 45, 42, 0.72);
+}

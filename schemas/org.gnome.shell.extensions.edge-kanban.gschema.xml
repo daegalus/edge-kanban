@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.edge-kanban" path="/org/gnome/shell/extensions/edge-kanban/">
+    <key name="edge" type="s">
+      <choices>
+        <choice value="left"/>
+        <choice value="right"/>
+        <choice value="top"/>
+        <choice value="bottom"/>
+      </choices>
+      <default>'left'</default>
+      <summary>Screen edge</summary>
+      <description>The edge where the Kanban board is anchored.</description>
+    </key>
+    <key name="monitor-mode" type="s">
+      <choices>
+        <choice value="primary"/>
+        <choice value="outer-edge"/>
+      </choices>
+      <default>'primary'</default>
+      <summary>Monitor selection</summary>
+      <description>Whether the board anchors to the primary monitor or the outer display edge in a multi-monitor layout.</description>
+    </key>
+    <key name="side-size" type="i">
+      <range min="280" max="720"/>
+      <default>420</default>
+      <summary>Side panel width</summary>
+      <description>Panel width in pixels when anchored to the left or right edge.</description>
+    </key>
+    <key name="bar-size" type="i">
+      <range min="220" max="560"/>
+      <default>340</default>
+      <summary>Top or bottom panel height</summary>
+      <description>Panel height in pixels when anchored to the top or bottom edge.</description>
+    </key>
+    <key name="handle-size" type="i">
+      <range min="6" max="40"/>
+      <default>14</default>
+      <summary>Handle size</summary>
+      <description>Visible handle size in pixels when the board is hidden.</description>
+    </key>
+    <key name="handle-coverage" type="i">
+      <range min="10" max="100"/>
+      <default>70</default>
+      <summary>Handle coverage</summary>
+      <description>Percentage of the screen edge used as the centered reveal target.</description>
+    </key>
+    <key name="handle-mode" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="always"/>
+        <choice value="transparent"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>Handle visibility</summary>
+      <description>Whether the handle is visible only while hidden, always visible, or transparent.</description>
+    </key>
+    <key name="hide-delay-ms" type="i">
+      <range min="0" max="3000"/>
+      <default>550</default>
+      <summary>Hide delay</summary>
+      <description>Delay in milliseconds before hiding after the pointer leaves the board.</description>
+    </key>
+    <key name="background-mode" type="s">
+      <choices>
+        <choice value="off-white"/>
+        <choice value="transparent"/>
+        <choice value="theme"/>
+        <choice value="custom"/>
+      </choices>
+      <default>'off-white'</default>
+      <summary>Background mode</summary>
+      <description>How the Kanban surface background is chosen.</description>
+    </key>
+    <key name="background-color" type="s">
+      <default>'#f7f3ea'</default>
+      <summary>Custom background color</summary>
+      <description>Hex color used when background-mode is custom.</description>
+    </key>
+    <key name="storage-mode" type="s">
+      <choices>
+        <choice value="default"/>
+        <choice value="custom"/>
+      </choices>
+      <default>'default'</default>
+      <summary>Storage mode</summary>
+      <description>Whether task data is stored in the default XDG config location or a custom JSON file.</description>
+    </key>
+    <key name="storage-path" type="s">
+      <default>''</default>
+      <summary>Custom storage path</summary>
+      <description>Path to a custom tasks JSON file when storage-mode is custom.</description>
+    </key>
+  </schema>
+</schemalist>

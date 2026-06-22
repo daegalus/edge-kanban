@@ -1,0 +1,79 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  EXTENSION_UUID: edge-kanban@yulian.local
+  SCHEMA_FILE: schemas/org.gnome.shell.extensions.edge-kanban.gschema.xml
+
+jobs:
+  package:
+    name: Package GNOME extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v5
+
+      - name: Install packaging tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            gnome-shell \
+            libglib2.0-bin
+
+      - name: Validate JavaScript syntax
+        run: |
+          node --check extension.js
+          node --check kanban.js
+          node --check prefs.js
+
+      - name: Compile schemas
+        run: glib-compile-schemas schemas
+
+      - name: Package extension
+        run: |
+          mkdir -p dist
+          gnome-extensions pack . \
+            --schema="${SCHEMA_FILE}" \
+            --extra-source=kanban.js \
+            --out-dir=dist \
+            -f
+
+      - name: Write checksums
+        id: checksums
+        run: |
+          artifact="dist/${EXTENSION_UUID}.shell-extension.zip"
+          sha256sum "${artifact}" | tee "dist/${EXTENSION_UUID}.sha256"
+          echo "sha256=$(sha256sum "${artifact}" | awk '{print $1}')" >> "${GITHUB_OUTPUT}"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: edge-kanban-gnome-extension
+          path: |
+            dist/${{ env.EXTENSION_UUID }}.shell-extension.zip
+            dist/${{ env.EXTENSION_UUID }}.sha256
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/${{ env.EXTENSION_UUID }}.shell-extension.zip
+            dist/${{ env.EXTENSION_UUID }}.sha256
+          body: |
+            GNOME Shell extension bundle for `${{ env.EXTENSION_UUID }}`.
+
+            Homebrew cask SHA256:
+
+            ```text
+            ${{ steps.checksums.outputs.sha256 }}
+            ```
