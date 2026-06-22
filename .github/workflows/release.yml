@@ -2,9 +2,14 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
   workflow_dispatch:
+    inputs:
+      release_name:
+        description: "Optional release name/tag override. Defaults to earthdate."
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -21,6 +26,25 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v5
+
+      - name: Download earthdate
+        run: wget -O earthdate https://github.com/daegalus/earthdate/releases/latest/download/earthdate-linux-x86_64
+
+      - name: Fix earthdate permissions
+        run: chmod +x earthdate
+
+      - name: Get release name
+        id: release
+        env:
+          RELEASE_NAME_INPUT: ${{ github.event.inputs.release_name || '' }}
+        run: |
+          if [ -n "${RELEASE_NAME_INPUT}" ]; then
+            release_name="${RELEASE_NAME_INPUT}"
+          else
+            release_name="$(./earthdate)"
+          fi
+
+          echo "release_name=${release_name}" >> "${GITHUB_OUTPUT}"
 
       - name: Install packaging tools
         run: |
@@ -63,14 +87,19 @@ jobs:
             dist/${{ env.EXTENSION_UUID }}.sha256
 
       - name: Publish GitHub release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          name: ${{ steps.release.outputs.release_name }}
+          tag_name: ${{ steps.release.outputs.release_name }}
+          target_commitish: ${{ github.sha }}
+          make_latest: true
           files: |
             dist/${{ env.EXTENSION_UUID }}.shell-extension.zip
             dist/${{ env.EXTENSION_UUID }}.sha256
           body: |
             GNOME Shell extension bundle for `${{ env.EXTENSION_UUID }}`.
+
+            Source commit: `${{ github.sha }}`
 
             Homebrew cask SHA256:
 

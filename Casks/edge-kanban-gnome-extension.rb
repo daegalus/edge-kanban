@@ -2,7 +2,7 @@ cask "edge-kanban-gnome-extension" do
   version "0.1.0"
   sha256 "546730d6d5163747a52b7c00a071b02481a4281016b7abcc889665adb44fb598"
 
-  url "https://github.com/daegalus/edge-kanban/releases/download/v#{version}/edge-kanban@yulian.local.shell-extension.zip",
+  url "https://github.com/daegalus/edge-kanban/releases/download/#{version}/edge-kanban@yulian.local.shell-extension.zip",
       verified: "github.com/daegalus/edge-kanban/"
   name "Edge Kanban GNOME Extension"
   desc "Edge-anchored Kanban board for GNOME Shell"

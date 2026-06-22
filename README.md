@@ -30,10 +30,12 @@ The cask installs the extension files into:
 ${XDG_DATA_HOME:-~/.local/share}/gnome-shell/extensions/edge-kanban@yulian.local
 ```
 
-It compiles schemas and reloads the extension after install. For release updates,
-tag this repository with `vX.Y.Z`; the GitHub release workflow builds
+It compiles schemas and reloads the extension after install. On every push to
+`main`, or from a manual `workflow_dispatch` run, the GitHub release workflow
+uses `earthdate` to name the release and backing GitHub tag. It builds
 `edge-kanban@yulian.local.shell-extension.zip` and writes a matching SHA256 file
-for the cask bump.
+for the cask bump. Manual runs can override the generated release name when
+needed.
 
 During development, `extension.js` is a stable cache-busting loader. After one clean Shell load, edits to `kanban.js`, `prefs.js`, `stylesheet.css`, or schemas can usually be picked up with:
 
